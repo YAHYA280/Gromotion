@@ -1,6 +1,5 @@
 import { Star, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 
 const ServicesSection = () => {
   const services = [
@@ -8,7 +7,7 @@ const ServicesSection = () => {
       title: "Spinal Adjustment",
       description:
         "Realigning vertebrae to relieve pain, improve function, and support the body's ability to heal itself.",
-      bgColor: "bg-green-100",
+      bgColor: "bg-[#c8e6a0]",
     },
     {
       title: "Postural and Spinal Screenings",
@@ -20,7 +19,7 @@ const ServicesSection = () => {
       title: "Soft Tissue Therapy",
       description:
         "Techniques like massage, myofascial release, or trigger point therapy to treat muscle tension and pain.",
-      bgColor: "bg-green-100",
+      bgColor: "bg-[#c8e6a0]",
     },
     {
       title: "X-rays and Imaging Referrals",
@@ -31,7 +30,7 @@ const ServicesSection = () => {
     {
       title: "Back and Neck Pain Treatment",
       description: "Specialized care for chronic or acute pain.",
-      bgColor: "bg-green-100",
+      bgColor: "bg-[#c8e6a0]",
     },
     {
       title: "Sports Injury Rehabilitation",
@@ -45,33 +44,33 @@ const ServicesSection = () => {
     <section className="bg-gray-800 py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Onze Diensten</h2>
-          <p className="text-gray-300">Jaren van ervaring</p>
+          <h2 className="text-5xl font-bold text-white mb-4">Onze Diensten</h2>
+          <p className="text-gray-300 text-lg">Jaren van ervaring</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card
+            <div
               key={index}
-              className={`${service.bgColor} p-6 rounded-2xl border-0`}
+              className={`${service.bgColor} p-8 rounded-[32px] border-0`}
             >
-              <CardContent className="p-0">
-                <div
-                  className={`${
-                    service.bgColor === "bg-white" ? "bg-green-100" : "bg-white"
-                  } w-12 h-12 rounded-lg flex items-center justify-center mb-4`}
-                >
-                  <Star className="w-6 h-6 text-green-600" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 mb-6">{service.description}</p>
-                <Button className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
-                  Advies gesprek{" "}
-                  <ArrowRight className="inline-block w-4 h-4 ml-1" />
-                </Button>
-              </CardContent>
-            </Card>
+              <div
+                className={`${
+                  service.bgColor === "bg-white" ? "bg-[#c8e6a0]" : "bg-white"
+                } w-16 h-16 rounded-full flex items-center justify-center mb-6`}
+              >
+                <Star className="w-8 h-8 text-gray-700" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                {service.title}
+              </h3>
+              <p className="text-gray-700 mb-8 leading-relaxed">
+                {service.description}
+              </p>
+              <Button className="bg-[#85c263] text-white px-6 py-3 rounded-full hover:bg-[#6ba84a] transition-colors">
+                Advies gesprek{" "}
+                <ArrowRight className="inline-block w-4 h-4 ml-2" />
+              </Button>
+            </div>
           ))}
         </div>
       </div>

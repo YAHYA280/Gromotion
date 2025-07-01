@@ -11,11 +11,11 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="pt-[212px] px-24 flex items-center gap-8 max-w-7xl mx-auto">
-      <div className="flex flex-col w-[740px] items-start gap-[54px]">
-        <div className="flex flex-col items-start gap-[72px] w-full">
-          <div className="flex flex-col items-start gap-4 w-full">
-            <h1 className="font-raleway font-bold text-[104px] leading-tight">
+    <section className="pt-[120px] px-24 flex items-center gap-8 max-w-7xl mx-auto min-h-screen">
+      <div className="flex flex-col w-[740px] items-start gap-12">
+        <div className="flex flex-col items-start gap-12 w-full">
+          <div className="flex flex-col items-start gap-6 w-full">
+            <h1 className="font-raleway font-bold text-[72px] leading-tight">
               <span className="text-[#85c263]">
                 &quot;Verlichting Begint Hier.
               </span>
@@ -23,7 +23,7 @@ const HeroSection = () => {
               <span className="text-[#85c263]">, Voel je Beter&quot;</span>
             </h1>
 
-            <p className="font-poppins font-medium text-[#292d32] text-2xl leading-relaxed">
+            <p className="font-poppins font-medium text-[#292d32] text-xl leading-relaxed max-w-[600px]">
               Een professionele aanpak die natuurlijke beweegpatronen en
               biologische principes combineert om pijn bij de kern aan te
               pakken. We focussen op duurzame gezondheid en optimale
@@ -32,9 +32,9 @@ const HeroSection = () => {
           </div>
 
           <div className="flex items-start gap-7">
-            <Button className="flex h-20 w-80 items-center justify-center gap-2.5 bg-[#262b31] hover:bg-[#1a1e23] rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl">
-              <PhoneCallIcon className="w-8 h-8" />
-              <span className="font-poppins font-bold text-white text-2xl">
+            <Button className="flex h-14 w-64 items-center justify-center gap-3 bg-[#262b31] hover:bg-[#1a1e23] rounded-full transition-all duration-300 shadow-lg hover:shadow-xl">
+              <PhoneCallIcon className="w-6 h-6" />
+              <span className="font-poppins font-semibold text-white text-lg">
                 Advies gesprek
               </span>
             </Button>
@@ -46,54 +46,52 @@ const HeroSection = () => {
             {patientProfiles.map((profile, index) => (
               <Image
                 key={index}
-                className={`w-16 h-16 relative object-cover rounded-full border-4 border-white shadow-md ${
+                className={`w-12 h-12 relative object-cover rounded-full border-3 border-white shadow-md ${
                   index > 0 ? "-ml-2" : ""
                 }`}
                 alt={profile.alt}
                 src={profile.src}
-                width={64}
-                height={64}
+                width={48}
+                height={48}
               />
             ))}
           </div>
 
-          <p className="font-poppins font-semibold text-black text-[32px]">
+          <p className="font-poppins font-semibold text-black text-2xl">
             +560 Behandelde Patiënten
           </p>
         </div>
       </div>
 
-      <Card className="w-[764px] h-[1020px] bg-[#fbfdf7] rounded-2xl overflow-hidden shadow-2xl">
-        <CardContent className="p-0 h-full">
-          <div className="h-full relative">
-            <Image
-              src="/actief.png"
-              alt="Active physiotherapy session"
-              fill
-              className="object-cover"
-            />
-            <Card className="absolute w-[340px] h-[98px] bottom-[78px] left-10 bg-[#fbfdf7] rounded-3xl shadow-lg">
-              <CardContent className="p-5 flex items-center gap-4">
-                <Image
-                  className="w-14 h-14 object-cover rounded-full"
-                  alt="Dr Pim Groenendijk"
-                  src="/ellipse-17.png"
-                  width={56}
-                  height={56}
-                />
-                <div className="flex flex-col w-52 items-start gap-1">
-                  <h3 className="font-poppins font-bold text-black text-xl">
-                    Dr Pim Groenendijk
-                  </h3>
-                  <p className="font-poppins font-medium text-black text-base">
-                    Chiropractor
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </CardContent>
-      </Card>
+      <div className="flex-1 flex justify-center">
+        <div className="w-[600px] h-[700px] bg-[#fbfdf7] rounded-2xl overflow-hidden shadow-xl relative">
+          <Image
+            src="/actief.png"
+            alt="Active physiotherapy session"
+            fill
+            className="object-cover"
+          />
+          <Card className="absolute w-[300px] h-[80px] bottom-8 left-8 bg-[#fbfdf7] rounded-2xl shadow-lg">
+            <CardContent className="p-4 flex items-center gap-3">
+              <Image
+                className="w-12 h-12 object-cover rounded-full"
+                alt="Dr Pim Groenendijk"
+                src="/ellipse-17.png"
+                width={48}
+                height={48}
+              />
+              <div className="flex flex-col items-start gap-1">
+                <h3 className="font-poppins font-bold text-black text-lg">
+                  Dr Pim Groenendijk
+                </h3>
+                <p className="font-poppins font-medium text-black text-sm">
+                  Chiropractor
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
     </section>
   );
 };

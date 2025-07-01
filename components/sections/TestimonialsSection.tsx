@@ -1,4 +1,5 @@
-import { Card, CardContent } from "@/components/ui/card";
+"use client";
+import { motion } from "framer-motion";
 
 const TestimonialsSection = () => {
   const testimonials = [
@@ -38,25 +39,89 @@ const TestimonialsSection = () => {
     <section className="bg-gray-50 py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">
+          <h2 className="text-5xl font-bold text-gray-800 mb-4">
             Patiënt ervaringen
           </h2>
-          <p className="text-gray-600">
+          <p className="text-gray-600 text-lg">
             Beschikbaar van 9:00 tot 17:00 uur, maandag tot en met vrijdag.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
-            <Card key={index} className="bg-green-100 p-6 rounded-2xl border-0">
-              <CardContent className="p-0">
-                <div className="text-4xl text-green-600 mb-4">&quot;</div>
-                <p className="text-gray-700 mb-4">{testimonial.quote}</p>
-                <p className="font-semibold text-gray-800">
-                  {testimonial.name}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
+      </div>
+
+      {/* Full-width scrolling testimonials */}
+      <div className="w-full overflow-hidden">
+        <div className="space-y-8">
+          {/* First Row - Moving Right */}
+          <div className="relative overflow-hidden w-full">
+            <motion.div
+              animate={{ x: [0, -100] }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              className="flex gap-6 min-w-max"
+            >
+              {[
+                ...testimonials.slice(0, 3),
+                ...testimonials.slice(0, 3),
+                ...testimonials.slice(0, 3),
+              ].map((testimonial, index) => (
+                <motion.div
+                  key={`row1-${index}`}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  transition={{ duration: 0.3 }}
+                  className="bg-[#c8e6a0] p-8 rounded-[32px] border-0 w-96 flex-shrink-0"
+                >
+                  <div className="text-6xl text-gray-700 mb-4 font-serif leading-none">
+                    &quot;
+                  </div>
+                  <p className="text-gray-700 mb-6 leading-relaxed text-base">
+                    {testimonial.quote}
+                  </p>
+                  <p className="font-bold text-gray-800 text-lg">
+                    {testimonial.name}
+                  </p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Second Row - Moving Left */}
+          <div className="relative overflow-hidden w-full">
+            <motion.div
+              animate={{ x: [-100, 0] }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              className="flex gap-6 min-w-max"
+            >
+              {[
+                ...testimonials.slice(3, 6),
+                ...testimonials.slice(3, 6),
+                ...testimonials.slice(3, 6),
+              ].map((testimonial, index) => (
+                <motion.div
+                  key={`row2-${index}`}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  transition={{ duration: 0.3 }}
+                  className="bg-[#c8e6a0] p-8 rounded-[32px] border-0 w-96 flex-shrink-0"
+                >
+                  <div className="text-6xl text-gray-700 mb-4 font-serif leading-none">
+                    &quot;
+                  </div>
+                  <p className="text-gray-700 mb-6 leading-relaxed text-base">
+                    {testimonial.quote}
+                  </p>
+                  <p className="font-bold text-gray-800 text-lg">
+                    {testimonial.name}
+                  </p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>
