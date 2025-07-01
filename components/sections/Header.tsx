@@ -24,7 +24,7 @@ const Header = () => {
           className="w-48 h-12"
           alt="Gromotion Logo"
           src="/frame-1050.svg"
-          width={192}
+          width={180}
           height={48}
         />
 
