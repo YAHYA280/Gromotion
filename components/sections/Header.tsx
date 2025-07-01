@@ -28,7 +28,7 @@ const Header = () => {
           <Image
             className="h-8 lg:h-10 w-auto"
             alt="Gromotion Logo"
-            src="/frame-1050.svg"
+            src="/Gromotion.png"
             width={160}
             height={40}
             priority

@@ -5,9 +5,9 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const HeroSection = () => {
   const patientProfiles = [
-    { src: "/ellipse-22.png", alt: "Patient profile 1" },
-    { src: "/ellipse-23.png", alt: "Patient profile 2" },
-    { src: "/ellipse-24.png", alt: "Patient profile 3" },
+    { src: "/person2.jpg", alt: "Patient profile 1" },
+    { src: "/persone1.jpg", alt: "Patient profile 2" },
+    { src: "/persone4.jpg", alt: "Patient profile 3" },
   ];
 
   return (
@@ -68,30 +68,30 @@ const HeroSection = () => {
 
         {/* Right Image */}
         <div className="flex-1 flex justify-center w-full order-1 lg:order-2">
-          <div className="w-full max-w-md lg:max-w-none lg:w-[600px] h-64 sm:h-80 lg:h-[700px] bg-[#fbfdf7] rounded-2xl overflow-hidden shadow-xl relative">
+          <div className="w-full max-w-md lg:max-w-none lg:w-[600px] h-96 sm:h-[450px] lg:h-[700px] bg-[#fbfdf7] rounded-2xl overflow-hidden shadow-xl relative">
             <Image
-              src="/actief.png"
+              src="/AboutSection.png"
               alt="Active physiotherapy session"
               fill
-              className="object-cover"
+              className="object-cover object-center"
               priority
             />
 
             {/* Doctor Card - Hidden on small screens, visible on larger screens */}
-            <Card className="absolute w-64 lg:w-[300px] h-16 lg:h-[80px] bottom-4 lg:bottom-8 left-4 lg:left-8 bg-[#fbfdf7] rounded-2xl shadow-lg hidden sm:block">
-              <CardContent className="p-3 lg:p-4 flex items-center gap-3">
+            <Card className="absolute w-64 lg:w-[300px] h-20 lg:h-[90px] bottom-4 lg:bottom-8 left-4 lg:left-8 bg-[#fbfdf7] rounded-2xl shadow-lg hidden sm:block">
+              <CardContent className="p-3 lg:p-4 flex items-center gap-3 h-full">
                 <Image
-                  className="w-10 h-10 lg:w-12 lg:h-12 object-cover rounded-full"
+                  className="w-10 h-10 lg:w-12 lg:h-12 object-cover rounded-full flex-shrink-0"
                   alt="Dr Pim Groenendijk"
-                  src="/ellipse-17.png"
+                  src="/person3.png"
                   width={48}
                   height={48}
                 />
-                <div className="flex flex-col items-start gap-1">
-                  <h3 className="font-poppins font-bold text-black text-sm lg:text-lg">
+                <div className="flex flex-col justify-center min-w-0 flex-1">
+                  <h3 className="font-poppins font-bold text-black text-sm lg:text-lg leading-tight">
                     Dr Pim Groenendijk
                   </h3>
-                  <p className="font-poppins font-medium text-black text-xs lg:text-sm">
+                  <p className="font-poppins font-medium text-black text-xs lg:text-sm leading-tight">
                     Chiropractor
                   </p>
                 </div>
@@ -104,19 +104,19 @@ const HeroSection = () => {
       {/* Doctor Card for mobile - shown below image */}
       <div className="sm:hidden mt-6">
         <Card className="w-full bg-[#fbfdf7] rounded-2xl shadow-lg">
-          <CardContent className="p-4 flex items-center gap-3">
+          <CardContent className="p-4 flex items-center gap-3 h-full">
             <Image
-              className="w-12 h-12 object-cover rounded-full"
+              className="w-12 h-12 object-cover rounded-full flex-shrink-0"
               alt="Dr Pim Groenendijk"
-              src="/ellipse-17.png"
+              src="/person3.png"
               width={48}
               height={48}
             />
-            <div className="flex flex-col items-start gap-1">
-              <h3 className="font-poppins font-bold text-black text-lg">
+            <div className="flex flex-col justify-center min-w-0 flex-1">
+              <h3 className="font-poppins font-bold text-black text-lg leading-tight">
                 Dr Pim Groenendijk
               </h3>
-              <p className="font-poppins font-medium text-black text-sm">
+              <p className="font-poppins font-medium text-black text-sm leading-tight">
                 Chiropractor
               </p>
             </div>
