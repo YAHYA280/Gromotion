@@ -70,7 +70,7 @@ const HeroSection = () => {
         <div className="flex-1 flex justify-center w-full order-1 lg:order-2">
           <div className="w-full max-w-md lg:max-w-none lg:w-[600px] h-96 sm:h-[450px] lg:h-[700px] bg-[#fbfdf7] rounded-2xl overflow-hidden shadow-xl relative">
             <Image
-              src="/AboutSection.png"
+              src="/Herosection.png"
               alt="Active physiotherapy session"
               fill
               className="object-cover object-center"

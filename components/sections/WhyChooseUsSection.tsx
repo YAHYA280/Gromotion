@@ -32,9 +32,9 @@ const WhyChooseUsSection = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-[#c8e6a0] p-8 rounded-[32px] border-0"
+              className="bg-[#E4FFAF] p-8 rounded-[12px] border-0"
             >
-              <div className="bg-white w-16 h-16 rounded-full flex items-center justify-center mb-6">
+              <div className="bg-white w-16 h-16 rounded-lg flex items-center justify-center mb-6">
                 <feature.icon className="w-8 h-8 text-gray-700" />
               </div>
               <h3 className="text-2xl font-bold text-gray-800 mb-4">
