@@ -47,16 +47,16 @@ const ServicesSection = () => {
           <h2 className="text-5xl font-bold text-white mb-4">Onze Diensten</h2>
           <p className="text-gray-300 text-lg">Jaren van ervaring</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
           {services.map((service, index) => (
             <div
               key={index}
-              className={`${service.bgColor} p-8 rounded-[32px] border-0`}
+              className={`${service.bgColor} p-10 rounded-[8px] border-0`}
             >
               <div
                 className={`${
                   service.bgColor === "bg-white" ? "bg-[#c8e6a0]" : "bg-white"
-                } w-16 h-16 rounded-full flex items-center justify-center mb-6`}
+                } w-16 h-16 rounded-lg flex items-center justify-center mb-6`}
               >
                 <Star className="w-8 h-8 text-gray-700" />
               </div>
@@ -66,7 +66,7 @@ const ServicesSection = () => {
               <p className="text-gray-700 mb-8 leading-relaxed">
                 {service.description}
               </p>
-              <Button className="bg-[#85c263] text-white px-6 py-3 rounded-full hover:bg-[#6ba84a] transition-colors">
+              <Button className="bg-[#85c263]  h-12 py-3 rounded-lg hover:bg-[#6ba84a] transition-colors text-black">
                 Advies gesprek{" "}
                 <ArrowRight className="inline-block w-4 h-4 ml-2" />
               </Button>

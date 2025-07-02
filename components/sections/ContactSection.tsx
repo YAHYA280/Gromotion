@@ -184,7 +184,7 @@ const ContactSection = () => {
 
                   <Button
                     type="submit"
-                    className="w-full bg-[#85c263] text-white py-4 rounded-xl hover:bg-[#6ba84a] transition-colors font-semibold text-lg"
+                    className="w-full bg-[#85c263] text-white py-4 rounded-lg hover:bg-[#6ba84a] transition-colors font-semibold text-lg"
                   >
                     Verstuur{" "}
                     <ArrowRight className="inline-block w-5 h-5 ml-2" />
@@ -203,7 +203,7 @@ const ContactSection = () => {
               </h3>
               <div className="text-center">
                 <p className="text-gray-700 mb-4 font-medium">Via Whatsapp</p>
-                <Button className="bg-[#85c263] text-white px-8 py-4 rounded-full hover:bg-[#6ba84a] transition-colors flex items-center font-semibold text-lg mx-auto">
+                <Button className="bg-[#85c263] text-white px-8 py-4 rounded-lg hover:bg-[#6ba84a] transition-colors flex items-center font-semibold text-lg mx-auto">
                   <Phone className="w-5 h-5 mr-3" />
                   +31 6 25 199 747
                 </Button>

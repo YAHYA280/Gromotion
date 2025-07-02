@@ -54,24 +54,20 @@ const TestimonialsSection = () => {
           {/* First Row - Moving Right */}
           <div className="relative overflow-hidden w-full">
             <motion.div
-              animate={{ x: [0, -100] }}
+              animate={{ x: ["0%", "-25%"] }}
               transition={{
-                duration: 20,
+                duration: 30,
                 repeat: Infinity,
                 ease: "linear",
               }}
               className="flex gap-6 min-w-max"
             >
-              {[
-                ...testimonials.slice(0, 3),
-                ...testimonials.slice(0, 3),
-                ...testimonials.slice(0, 3),
-              ].map((testimonial, index) => (
+              {[...testimonials, ...testimonials].map((testimonial, index) => (
                 <motion.div
-                  key={`row1-${index}`}
+                  key={index}
                   whileHover={{ scale: 1.05, y: -5 }}
                   transition={{ duration: 0.3 }}
-                  className="bg-[#c8e6a0] p-8 rounded-[32px] border-0 w-96 flex-shrink-0"
+                  className="bg-[#c8e6a0] p-8 rounded-[12px] border-0 w-96 flex-shrink-0"
                 >
                   <div className="text-6xl text-gray-700 mb-4 font-serif leading-none">
                     &quot;
@@ -90,7 +86,7 @@ const TestimonialsSection = () => {
           {/* Second Row - Moving Left */}
           <div className="relative overflow-hidden w-full">
             <motion.div
-              animate={{ x: [-100, 0] }}
+              animate={{ x: ["-25%", "0%"] }}
               transition={{
                 duration: 20,
                 repeat: Infinity,
@@ -107,7 +103,7 @@ const TestimonialsSection = () => {
                   key={`row2-${index}`}
                   whileHover={{ scale: 1.05, y: -5 }}
                   transition={{ duration: 0.3 }}
-                  className="bg-[#c8e6a0] p-8 rounded-[32px] border-0 w-96 flex-shrink-0"
+                  className="bg-[#c8e6a0] p-8 rounded-[12px] border-0 w-96 flex-shrink-0"
                 >
                   <div className="text-6xl text-gray-700 mb-4 font-serif leading-none">
                     &quot;

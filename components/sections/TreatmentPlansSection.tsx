@@ -111,7 +111,7 @@ const TreatmentPlansSection = () => {
                     </li>
                   ))}
                 </ul>
-                <Button className="w-full bg-[#85c263] text-white py-3 rounded-full hover:bg-[#6ba84a] transition-colors font-semibold">
+                <Button className="w-full bg-[#85c263] text-white py-3 rounded-lg hover:bg-[#6ba84a] transition-colors font-semibold">
                   Kies plan
                 </Button>
               </div>
