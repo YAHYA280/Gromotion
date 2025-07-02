@@ -8,6 +8,7 @@ import TestimonialsSection from "./sections/TestimonialsSection";
 import ContactSection from "./sections/ContactSection";
 import FAQSection from "./sections/FAQSection";
 import Footer from "./sections/Footer";
+import LocationSection from "./sections/LocationSection";
 import { JSX } from "react";
 
 export const HomePage = (): JSX.Element => {
@@ -23,6 +24,7 @@ export const HomePage = (): JSX.Element => {
         <TestimonialsSection />
         <ContactSection />
         <FAQSection />
+        <LocationSection />
       </main>
       <Footer />
     </div>
