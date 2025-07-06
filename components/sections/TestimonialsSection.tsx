@@ -65,10 +65,7 @@ const TestimonialsSection = () => {
               {[...testimonials, ...testimonials].map((testimonial, index) => (
                 <div
                   key={index}
-                  className="bg-[#c8e6a0] p-8 rounded-xl w-96 flex-shrink-0 transition-all duration-300 ease-out hover:shadow-2xl hover:-translate-y-2 hover:scale-105 cursor-pointer"
-                  style={{
-                    borderRadius: "12px", // Force rounded corners
-                  }}
+                  className="bg-[#c8e6a0] p-8 rounded-xl w-96 flex-shrink-0"
                 >
                   <div className="text-6xl text-gray-700 mb-4 font-serif leading-none">
                     &quot;
@@ -102,19 +99,7 @@ const TestimonialsSection = () => {
               ].map((testimonial, index) => (
                 <div
                   key={`row2-${index}`}
-                  className="bg-[#c8e6a0] p-8 w-96 flex-shrink-0 transition-all duration-300 ease-out hover:shadow-2xl hover:-translate-y-2 cursor-pointer will-change-transform"
-                  style={{
-                    borderRadius: "12px",
-                    transformOrigin: "center center",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform =
-                      "translateY(-8px) scale3d(1.05, 1.05, 1)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform =
-                      "translateY(0) scale3d(1, 1, 1)";
-                  }}
+                  className="bg-[#c8e6a0] p-8 rounded-xl w-96 flex-shrink-0"
                 >
                   <div className="text-6xl text-gray-700 mb-4 font-serif leading-none">
                     &quot;

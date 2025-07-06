@@ -66,7 +66,7 @@ const ContactSection = () => {
           {/* Contact Form */}
           <div>
             <form onSubmit={handleSubmit}>
-              <div className="bg-[#f5f5dc] p-8 rounded-[32px]">
+              <div className="bg-[#f5f5dc] p-8 rounded-[12px]">
                 <div className="space-y-6">
                   {/* Naam Field */}
                   <div className="relative">
@@ -204,7 +204,7 @@ const ContactSection = () => {
           {/* Right Side - Contact Info & Testimonial */}
           <div className="space-y-8">
             {/* Contact Info Card */}
-            <div className="bg-[#f5f5dc] p-8 rounded-[32px]">
+            <div className="bg-[#f5f5dc] p-8 rounded-[12px]">
               <h3 className="text-3xl font-bold text-gray-800 mb-8 text-center">
                 Neem contact met ons op en wij bellen je terug!
               </h3>
@@ -224,7 +224,7 @@ const ContactSection = () => {
             </div>
 
             {/* Testimonial Card */}
-            <div className="bg-[#f5f5dc] p-8 rounded-[32px]">
+            <div className="bg-[#f5f5dc] p-8 rounded-[12px]">
               <div className="text-center">
                 <div className="text-6xl text-[#85c263] mb-6 font-serif leading-none">
                   &quot;
