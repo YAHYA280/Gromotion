@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   MapPin,
   Phone,
@@ -18,27 +19,15 @@ const Footer = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
               {/* Left Section - Logo and Description */}
               <div className="space-y-6">
-                <div className="flex items-center space-x-3">
-                  <div className="flex flex-col items-center">
-                    <div className="flex space-x-1 mb-1">
-                      <div className="w-1 h-1 bg-[#85c263] rounded-full"></div>
-                      <div className="w-1 h-1 bg-[#85c263] rounded-full"></div>
-                      <div className="w-1 h-1 bg-[#85c263] rounded-full"></div>
-                    </div>
-                    <div className="flex space-x-1 mb-1">
-                      <div className="w-1 h-1 bg-[#85c263] rounded-full"></div>
-                      <div className="w-1 h-1 bg-[#85c263] rounded-full"></div>
-                      <div className="w-1 h-1 bg-[#85c263] rounded-full"></div>
-                    </div>
-                    <div className="flex space-x-1">
-                      <div className="w-1 h-1 bg-[#85c263] rounded-full"></div>
-                      <div className="w-1 h-1 bg-[#85c263] rounded-full"></div>
-                      <div className="w-1 h-1 bg-[#85c263] rounded-full"></div>
-                    </div>
-                  </div>
-                  <span className="text-lg font-bold text-gray-800">
-                    GROMOTION
-                  </span>
+                <div className="flex items-center">
+                  <Image
+                    className="h-8 lg:h-10 w-auto"
+                    alt="Gromotion Logo"
+                    src="/Gromotion.svg"
+                    width={160}
+                    height={40}
+                    priority
+                  />
                 </div>
                 <p className="text-gray-600 text-sm leading-relaxed">
                   In onze trajecten streven we naar een holistische benadering
@@ -152,9 +141,14 @@ const Footer = () => {
             <div className="border-t border-gray-300 mt-10 pt-6">
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0">
                 <div className="flex flex-wrap items-center gap-4 text-xs text-gray-600">
-                  <span className="font-bold">
+                  <a
+                    href="https://achieve.nl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-bold hover:text-gray-800 transition-colors cursor-pointer"
+                  >
                     Ontwikkeld door Achieve.nl © 2025
-                  </span>
+                  </a>
                   <a href="#" className="hover:text-gray-800 transition-colors">
                     Algemene Voorwaarden
                   </a>

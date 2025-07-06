@@ -134,11 +134,14 @@ const TreatmentPlansSection = () => {
                   </ul>
 
                   <Button
-                    className="w-full bg-[#85c263] text-white py-3 rounded-lg 
+                    className="group/button w-full h-11 bg-[#85c263] text-white py-3 rounded-lg 
                     hover:bg-[#6ba84a] hover:shadow-lg transition-all duration-300 
-                    font-semibold transform group-hover:scale-105"
+                    font-semibold transform hover:scale-105 active:scale-95 overflow-hidden relative"
                   >
-                    Kies plan
+                    <span className="relative z-10">Kies plan</span>
+
+                    {/* Subtle shine animation */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/button:translate-x-full transition-transform duration-700 ease-out"></div>
                   </Button>
                 </div>
               </div>

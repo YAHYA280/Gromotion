@@ -34,11 +34,14 @@ const HeroSection = () => {
             </div>
 
             <div className="flex items-start gap-7 w-full">
-              <Button className="flex h-12 lg:h-14 w-full sm:w-64 items-center justify-center gap-3 bg-[#262b31] hover:bg-[#1a1e23] rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl">
-                <PhoneCallIcon className="w-5 h-5 lg:w-6 lg:h-6" />
-                <span className="font-poppins font-semibold text-white text-base lg:text-lg">
+              <Button className="group flex h-12 lg:h-14 w-full sm:w-64 items-center justify-center gap-3 bg-[#262b31] hover:bg-[#1a1e23] rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 overflow-hidden relative">
+                <PhoneCallIcon className="w-5 h-5 lg:w-6 lg:h-6 text-white relative z-10" />
+                <span className="font-poppins font-semibold text-white text-base lg:text-lg relative z-10">
                   Advies gesprek
                 </span>
+
+                {/* Subtle shine animation */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></div>
               </Button>
             </div>
           </div>

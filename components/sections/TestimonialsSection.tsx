@@ -63,11 +63,12 @@ const TestimonialsSection = () => {
               className="flex gap-6 min-w-max"
             >
               {[...testimonials, ...testimonials].map((testimonial, index) => (
-                <motion.div
+                <div
                   key={index}
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  transition={{ duration: 0.3 }}
-                  className="bg-[#c8e6a0] p-8 rounded-[12px] border-0 w-96 flex-shrink-0"
+                  className="bg-[#c8e6a0] p-8 rounded-xl w-96 flex-shrink-0 transition-all duration-300 ease-out hover:shadow-2xl hover:-translate-y-2 hover:scale-105 cursor-pointer"
+                  style={{
+                    borderRadius: "12px", // Force rounded corners
+                  }}
                 >
                   <div className="text-6xl text-gray-700 mb-4 font-serif leading-none">
                     &quot;
@@ -78,7 +79,7 @@ const TestimonialsSection = () => {
                   <p className="font-bold text-gray-800 text-lg">
                     {testimonial.name}
                   </p>
-                </motion.div>
+                </div>
               ))}
             </motion.div>
           </div>
@@ -99,11 +100,21 @@ const TestimonialsSection = () => {
                 ...testimonials.slice(3, 6),
                 ...testimonials.slice(3, 6),
               ].map((testimonial, index) => (
-                <motion.div
+                <div
                   key={`row2-${index}`}
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  transition={{ duration: 0.3 }}
-                  className="bg-[#c8e6a0] p-8 rounded-[12px] border-0 w-96 flex-shrink-0"
+                  className="bg-[#c8e6a0] p-8 w-96 flex-shrink-0 transition-all duration-300 ease-out hover:shadow-2xl hover:-translate-y-2 cursor-pointer will-change-transform"
+                  style={{
+                    borderRadius: "12px",
+                    transformOrigin: "center center",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform =
+                      "translateY(-8px) scale3d(1.05, 1.05, 1)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform =
+                      "translateY(0) scale3d(1, 1, 1)";
+                  }}
                 >
                   <div className="text-6xl text-gray-700 mb-4 font-serif leading-none">
                     &quot;
@@ -114,7 +125,7 @@ const TestimonialsSection = () => {
                   <p className="font-bold text-gray-800 text-lg">
                     {testimonial.name}
                   </p>
-                </motion.div>
+                </div>
               ))}
             </motion.div>
           </div>

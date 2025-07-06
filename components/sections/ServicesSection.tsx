@@ -66,9 +66,14 @@ const ServicesSection = () => {
               <p className="text-gray-700 mb-8 leading-relaxed">
                 {service.description}
               </p>
-              <Button className="bg-[#85c263]  h-12 py-3 rounded-lg hover:bg-[#6ba84a] transition-colors text-black">
-                Advies gesprek{" "}
-                <ArrowRight className="inline-block w-4 h-4 ml-2" />
+              <Button className="group bg-[#85c263] h-12 py-3 rounded-lg hover:bg-[#6ba84a] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 overflow-hidden relative">
+                <span className="text-black font-semibold relative z-10">
+                  Advies gesprek
+                </span>
+                <ArrowRight className="inline-block w-4 h-4 ml-2 text-black transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 relative z-10 rotate-[-45deg]" />
+
+                {/* Subtle shine animation */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></div>
               </Button>
             </div>
           ))}

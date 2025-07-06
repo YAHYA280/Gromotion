@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Phone, ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const ContactSection = () => {
@@ -44,6 +44,10 @@ const ContactSection = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
+  };
+
+  const handleWhatsAppClick = () => {
+    window.open("https://api.whatsapp.com/send/?phone=31613316628", "_blank");
   };
 
   return (
@@ -184,10 +188,13 @@ const ContactSection = () => {
 
                   <Button
                     type="submit"
-                    className="w-full bg-[#85c263] text-white py-4 rounded-lg hover:bg-[#6ba84a] transition-colors font-semibold text-lg"
+                    className="group w-full h-11 bg-[#85c263] text-white py-4 rounded-lg hover:bg-[#6ba84a] transition-all duration-300 font-semibold text-lg hover:scale-105 active:scale-95 overflow-hidden relative"
                   >
-                    Verstuur{" "}
-                    <ArrowRight className="inline-block w-5 h-5 ml-2" />
+                    <span className="relative z-10">Verstuur</span>
+                    <ArrowRight className="inline-block w-5 h-5 ml-2 text-white transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 relative z-10 rotate-[-45deg]" />
+
+                    {/* Subtle shine animation */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></div>
                   </Button>
                 </div>
               </div>
@@ -203,9 +210,15 @@ const ContactSection = () => {
               </h3>
               <div className="text-center">
                 <p className="text-gray-700 mb-4 font-medium">Via Whatsapp</p>
-                <Button className="bg-[#85c263] text-white px-8 py-4 rounded-lg hover:bg-[#6ba84a] transition-colors flex items-center font-semibold text-lg mx-auto">
-                  <Phone className="w-5 h-5 mr-3" />
-                  +31 6 25 199 747
+                <Button
+                  onClick={handleWhatsAppClick}
+                  className="group h-11 bg-[#85c263] text-white px-8 py-4 rounded-lg hover:bg-[#6ba84a] transition-all duration-300 flex items-center font-semibold text-lg mx-auto hover:scale-105 active:scale-95 overflow-hidden relative cursor-pointer"
+                >
+                  <MessageCircle className="w-5 h-5 mr-3 text-white relative z-10" />
+                  <span className="relative z-10">+31 6 13 316 628</span>
+
+                  {/* Subtle shine animation */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></div>
                 </Button>
               </div>
             </div>

@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -50,23 +50,14 @@ const Header = () => {
 
         {/* Desktop CTA Button */}
         <div className="hidden lg:block">
-          <Button className="h-11 px-6 bg-[#85c263] hover:bg-[#6ba84a] rounded-lg transition-all duration-300 shadow-sm hover:shadow-md">
-            <span className="font-poppins font-semibold text-white text-base">
+          <Button className="group h-11 px-6 bg-[#85c263] hover:bg-[#6ba84a] rounded-lg transition-all duration-300 shadow-sm hover:shadow-md hover:scale-105 active:scale-95 overflow-hidden relative">
+            <span className="font-poppins font-semibold text-white text-base relative z-10">
               Advies gesprek
             </span>
-            <svg
-              className="w-4 h-4 ml-2"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
+            <ArrowRight className="w-4 h-4 ml-2 text-white transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 relative z-10 rotate-[-45deg]" />
+
+            {/* Subtle shine animation */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></div>
           </Button>
         </div>
 
@@ -99,23 +90,14 @@ const Header = () => {
               </a>
             ))}
             <div className="pt-4">
-              <Button className="w-full h-11 bg-[#85c263] hover:bg-[#6ba84a] rounded-lg transition-all duration-300">
-                <span className="font-poppins font-semibold text-white text-base">
+              <Button className="group w-full h-11 bg-[#85c263] hover:bg-[#6ba84a] rounded-lg transition-all duration-300 hover:scale-105 active:scale-95 overflow-hidden relative">
+                <span className="font-poppins font-semibold text-white text-base relative z-10">
                   Advies gesprek
                 </span>
-                <svg
-                  className="w-4 h-4 ml-2"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
+                <ArrowRight className="w-4 h-4 ml-2 text-white transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 relative z-10 rotate-[-45deg]" />
+
+                {/* Subtle shine animation */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></div>
               </Button>
             </div>
           </nav>
