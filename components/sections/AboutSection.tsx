@@ -1,8 +1,24 @@
+"use client";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 const AboutSection = () => {
+  const scrollToContact = () => {
+    const element = document.querySelector("#contact");
+    if (element) {
+      const headerHeight = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <section className="w-full mt-16 lg:mt-32 bg-[#fffffa] rounded-xl py-8 lg:py-16 px-4 sm:px-6 lg:px-16 shadow-inner">
       <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-10 max-w-7xl mx-auto">
@@ -61,7 +77,10 @@ const AboutSection = () => {
           </div>
 
           {/* CTA Button */}
-          <Button className="group w-full sm:w-64 h-12 lg:h-14 bg-[#85c263] hover:bg-[#6ba84a] rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 overflow-hidden relative">
+          <Button
+            onClick={scrollToContact}
+            className="group w-full sm:w-64 h-12 lg:h-14 bg-[#85c263] hover:bg-[#6ba84a] rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 overflow-hidden relative cursor-pointer"
+          >
             <span className="font-poppins font-semibold text-white text-base lg:text-lg relative z-10">
               Ik wil aan de slag
             </span>

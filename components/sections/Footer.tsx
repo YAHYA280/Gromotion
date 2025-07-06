@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import {
   MapPin,
@@ -10,6 +11,31 @@ import {
 } from "lucide-react";
 
 const Footer = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.querySelector(sectionId);
+    if (element) {
+      const headerHeight = 80; // Account for fixed header
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const navigationItems = [
+    { name: "Over ons", href: "#about" },
+    { name: "Waarom wij?", href: "#about" }, // Points to about section as it contains "why choose us"
+    { name: "Onze diensten", href: "#services" },
+    { name: "Contact", href: "#contact" },
+    { name: "Reviews", href: "#testimonials" },
+    { name: "FAQs", href: "#faq" },
+    { name: "Map", href: "#location" }, // Points to location section
+  ];
+
   return (
     <footer className="bg-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,14 +46,19 @@ const Footer = () => {
               {/* Left Section - Logo and Description */}
               <div className="space-y-6">
                 <div className="flex items-center">
-                  <Image
-                    className="h-8 lg:h-10 w-auto"
-                    alt="Gromotion Logo"
-                    src="/Gromotion.svg"
-                    width={160}
-                    height={40}
-                    priority
-                  />
+                  <button
+                    onClick={() => scrollToSection("#hero")}
+                    className="focus:outline-none focus:ring-2 focus:ring-[#85c263] rounded-md"
+                  >
+                    <Image
+                      className="h-8 lg:h-10 w-auto"
+                      alt="Gromotion Logo"
+                      src="/Gromotion.svg"
+                      width={160}
+                      height={40}
+                      priority
+                    />
+                  </button>
                 </div>
                 <p className="text-gray-600 text-sm leading-relaxed">
                   In onze trajecten streven we naar een holistische benadering
@@ -42,62 +73,16 @@ const Footer = () => {
                   Pagina&apos;s
                 </h4>
                 <ul className="space-y-2">
-                  <li>
-                    <a
-                      href="#"
-                      className="text-gray-600 hover:text-gray-800 transition-colors text-sm"
-                    >
-                      Over ons
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="text-gray-600 hover:text-gray-800 transition-colors text-sm"
-                    >
-                      Waarom wij?
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="text-gray-600 hover:text-gray-800 transition-colors text-sm"
-                    >
-                      Onze diensten
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="text-gray-600 hover:text-gray-800 transition-colors text-sm"
-                    >
-                      Contact
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="text-gray-600 hover:text-gray-800 transition-colors text-sm"
-                    >
-                      Reviews
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="text-gray-600 hover:text-gray-800 transition-colors text-sm"
-                    >
-                      FAQs
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="text-gray-600 hover:text-gray-800 transition-colors text-sm"
-                    >
-                      Map
-                    </a>
-                  </li>
+                  {navigationItems.map((item, index) => (
+                    <li key={index}>
+                      <button
+                        onClick={() => scrollToSection(item.href)}
+                        className="text-gray-600 hover:text-[#85c263] transition-colors text-sm text-left focus:outline-none focus:text-[#85c263] focus:ring-2 focus:ring-[#85c263] rounded px-1 py-1"
+                      >
+                        {item.name}
+                      </button>
+                    </li>
+                  ))}
                 </ul>
               </div>
 
@@ -120,17 +105,36 @@ const Footer = () => {
                     <div className="w-5 h-5 rounded-full border border-gray-400 flex items-center justify-center flex-shrink-0">
                       <Phone className="w-3 h-3 text-gray-600" />
                     </div>
-                    <span className="text-gray-600 text-sm">
-                      +31 85 20 30 155
-                    </span>
+                    <a
+                      href="https://api.whatsapp.com/send/?phone=31613316628"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-[#85c263] transition-colors text-sm focus:outline-none focus:text-[#85c263]"
+                    >
+                      +31 61 33 16 628
+                    </a>
                   </li>
                   <li className="flex items-start space-x-3">
                     <div className="w-5 h-5 rounded-full border border-gray-400 flex items-center justify-center mt-0.5 flex-shrink-0">
                       <Mail className="w-3 h-3 text-gray-600" />
                     </div>
-                    <div className="text-gray-600 text-sm">
-                      <div>contact@gromotion.nl</div>
-                      <div>info@gromotion.nl</div>
+                    <div className="text-gray-600 text-sm space-y-1">
+                      <div>
+                        <a
+                          href="mailto:contact@gromotion.nl"
+                          className="hover:text-[#85c263] transition-colors focus:outline-none focus:text-[#85c263]"
+                        >
+                          contact@gromotion.nl
+                        </a>
+                      </div>
+                      <div>
+                        <a
+                          href="mailto:info@gromotion.nl"
+                          className="hover:text-[#85c263] transition-colors focus:outline-none focus:text-[#85c263]"
+                        >
+                          info@gromotion.nl
+                        </a>
+                      </div>
                     </div>
                   </li>
                 </ul>
@@ -145,41 +149,51 @@ const Footer = () => {
                     href="https://achieve.nl"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-bold hover:text-gray-800 transition-colors cursor-pointer"
+                    className="font-bold hover:text-[#85c263] transition-colors cursor-pointer focus:outline-none focus:text-[#85c263]"
                   >
                     Ontwikkeld door Achieve.nl © 2025
                   </a>
-                  <a href="#" className="hover:text-gray-800 transition-colors">
+                  <button
+                    onClick={() => scrollToSection("#contact")}
+                    className="hover:text-[#85c263] transition-colors focus:outline-none focus:text-[#85c263]"
+                  >
                     Algemene Voorwaarden
-                  </a>
-                  <a href="#" className="hover:text-gray-800 transition-colors">
+                  </button>
+                  <button
+                    onClick={() => scrollToSection("#contact")}
+                    className="hover:text-[#85c263] transition-colors focus:outline-none focus:text-[#85c263]"
+                  >
                     Privacy Statement
-                  </a>
+                  </button>
                   <span>2025 © GROMOTION</span>
                 </div>
 
                 <div className="flex items-center space-x-2">
                   <a
                     href="#"
-                    className="w-7 h-7 bg-gray-400 rounded-full flex items-center justify-center hover:bg-gray-500 transition-colors"
+                    className="w-7 h-7 bg-gray-400 rounded-full flex items-center justify-center hover:bg-[#85c263] transition-colors focus:outline-none focus:bg-[#85c263] focus:ring-2 focus:ring-[#85c263] focus:ring-offset-2"
+                    aria-label="LinkedIn"
                   >
                     <Linkedin className="w-3 h-3 text-white" />
                   </a>
                   <a
                     href="#"
-                    className="w-7 h-7 bg-gray-400 rounded-full flex items-center justify-center hover:bg-gray-500 transition-colors"
+                    className="w-7 h-7 bg-gray-400 rounded-full flex items-center justify-center hover:bg-[#85c263] transition-colors focus:outline-none focus:bg-[#85c263] focus:ring-2 focus:ring-[#85c263] focus:ring-offset-2"
+                    aria-label="Twitter"
                   >
                     <Twitter className="w-3 h-3 text-white" />
                   </a>
                   <a
                     href="#"
-                    className="w-7 h-7 bg-gray-400 rounded-full flex items-center justify-center hover:bg-gray-500 transition-colors"
+                    className="w-7 h-7 bg-gray-400 rounded-full flex items-center justify-center hover:bg-[#85c263] transition-colors focus:outline-none focus:bg-[#85c263] focus:ring-2 focus:ring-[#85c263] focus:ring-offset-2"
+                    aria-label="Instagram"
                   >
                     <Instagram className="w-3 h-3 text-white" />
                   </a>
                   <a
                     href="#"
-                    className="w-7 h-7 bg-gray-400 rounded-full flex items-center justify-center hover:bg-gray-500 transition-colors"
+                    className="w-7 h-7 bg-gray-400 rounded-full flex items-center justify-center hover:bg-[#85c263] transition-colors focus:outline-none focus:bg-[#85c263] focus:ring-2 focus:ring-[#85c263] focus:ring-offset-2"
+                    aria-label="Facebook"
                   >
                     <Facebook className="w-3 h-3 text-white" />
                   </a>

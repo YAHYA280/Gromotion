@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import { PhoneCallIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -9,6 +10,21 @@ const HeroSection = () => {
     { src: "/persone1.jpg", alt: "Patient profile 2" },
     { src: "/persone4.jpg", alt: "Patient profile 3" },
   ];
+
+  const scrollToContact = () => {
+    const element = document.querySelector("#contact");
+    if (element) {
+      const headerHeight = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <section className="pt-20 lg:pt-32 px-4 sm:px-6 lg:px-8 xl:px-16 max-w-7xl mx-auto min-h-screen">
@@ -34,7 +50,10 @@ const HeroSection = () => {
             </div>
 
             <div className="flex items-start gap-7 w-full">
-              <Button className="group flex h-12 lg:h-14 w-full sm:w-64 items-center justify-center gap-3 bg-[#262b31] hover:bg-[#1a1e23] rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 overflow-hidden relative">
+              <Button
+                onClick={scrollToContact}
+                className="group flex h-12 lg:h-14 w-full sm:w-64 items-center justify-center gap-3 bg-[#262b31] hover:bg-[#1a1e23] rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 overflow-hidden relative cursor-pointer"
+              >
                 <PhoneCallIcon className="w-5 h-5 lg:w-6 lg:h-6 text-white relative z-10" />
                 <span className="font-poppins font-semibold text-white text-base lg:text-lg relative z-10">
                   Advies gesprek

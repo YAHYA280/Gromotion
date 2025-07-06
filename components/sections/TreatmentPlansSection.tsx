@@ -1,6 +1,22 @@
+"use client";
 import { Button } from "@/components/ui/button";
 
 const TreatmentPlansSection = () => {
+  const scrollToContact = () => {
+    const element = document.querySelector("#contact");
+    if (element) {
+      const headerHeight = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   const plans = [
     {
       title: "Gratis Intakegesprek",
@@ -134,9 +150,10 @@ const TreatmentPlansSection = () => {
                   </ul>
 
                   <Button
+                    onClick={scrollToContact}
                     className="group/button w-full h-11 bg-[#85c263] text-white py-3 rounded-lg 
                     hover:bg-[#6ba84a] hover:shadow-lg transition-all duration-300 
-                    font-semibold transform hover:scale-105 active:scale-95 overflow-hidden relative"
+                    font-semibold transform hover:scale-105 active:scale-95 overflow-hidden relative cursor-pointer"
                   >
                     <span className="relative z-10">Kies plan</span>
 

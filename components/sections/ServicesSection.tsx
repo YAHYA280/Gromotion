@@ -1,7 +1,23 @@
+"use client";
 import { Star, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const ServicesSection = () => {
+  const scrollToContact = () => {
+    const element = document.querySelector("#contact");
+    if (element) {
+      const headerHeight = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   const services = [
     {
       title: "Spinal Adjustment",
@@ -66,7 +82,10 @@ const ServicesSection = () => {
               <p className="text-gray-700 mb-8 leading-relaxed">
                 {service.description}
               </p>
-              <Button className="group bg-[#85c263] h-12 py-3 rounded-lg hover:bg-[#6ba84a] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 overflow-hidden relative">
+              <Button
+                onClick={scrollToContact}
+                className="group bg-[#85c263] h-12 py-3 rounded-lg hover:bg-[#6ba84a] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 overflow-hidden relative cursor-pointer"
+              >
                 <span className="text-black font-semibold relative z-10">
                   Advies gesprek
                 </span>

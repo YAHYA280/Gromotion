@@ -16,15 +16,29 @@ export const HomePage = (): JSX.Element => {
     <div className="relative w-full min-h-screen bg-white">
       <Header />
       <main className="overflow-x-hidden">
-        <HeroSection />
-        <AboutSection />
+        <div id="hero">
+          <HeroSection />
+        </div>
+        <div id="about">
+          <AboutSection />
+        </div>
         <WhyChooseUsSection />
-        <ServicesSection />
+        <div id="services">
+          <ServicesSection />
+        </div>
         <TreatmentPlansSection />
-        <TestimonialsSection />
-        <ContactSection />
-        <FAQSection />
-        <LocationSection />
+        <div id="testimonials">
+          <TestimonialsSection />
+        </div>
+        <div id="contact">
+          <ContactSection />
+        </div>
+        <div id="faq">
+          <FAQSection />
+        </div>
+        <div id="location">
+          <LocationSection />
+        </div>
       </main>
       <Footer />
     </div>
