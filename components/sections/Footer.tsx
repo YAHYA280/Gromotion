@@ -1,14 +1,6 @@
 "use client";
 import Image from "next/image";
-import {
-  MapPin,
-  Phone,
-  Mail,
-  Linkedin,
-  Twitter,
-  Instagram,
-  Facebook,
-} from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 
 const Footer = () => {
   const scrollToSection = (sectionId: string) => {
@@ -143,16 +135,16 @@ const Footer = () => {
 
             {/* Bottom Section */}
             <div className="border-t border-gray-300 mt-10 pt-6">
-              <div className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0">
-                <div className="flex flex-wrap items-center gap-4 text-xs text-gray-600">
-                  <a
-                    href="https://achieve.nl"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-bold hover:text-[#85c263] transition-colors cursor-pointer focus:outline-none focus:text-[#85c263]"
-                  >
-                    Ontwikkeld door Achieve.nl © 2025
-                  </a>
+              <div className="flex flex-wrap items-center justify-between gap-4 text-xs text-gray-600">
+                <a
+                  href="https://achieve.nl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-bold hover:text-[#85c263] transition-colors cursor-pointer focus:outline-none focus:text-[#85c263]"
+                >
+                  Ontwikkeld door Achieve.nl © 2025
+                </a>
+                <div className="flex flex-wrap items-center gap-4">
                   <button
                     onClick={() => scrollToSection("#contact")}
                     className="hover:text-[#85c263] transition-colors focus:outline-none focus:text-[#85c263]"
@@ -166,37 +158,6 @@ const Footer = () => {
                     Privacy Statement
                   </button>
                   <span>2025 © GROMOTION</span>
-                </div>
-
-                <div className="flex items-center space-x-2">
-                  <a
-                    href="#"
-                    className="w-7 h-7 bg-gray-400 rounded-full flex items-center justify-center hover:bg-[#85c263] transition-colors focus:outline-none focus:bg-[#85c263] focus:ring-2 focus:ring-[#85c263] focus:ring-offset-2"
-                    aria-label="LinkedIn"
-                  >
-                    <Linkedin className="w-3 h-3 text-white" />
-                  </a>
-                  <a
-                    href="#"
-                    className="w-7 h-7 bg-gray-400 rounded-full flex items-center justify-center hover:bg-[#85c263] transition-colors focus:outline-none focus:bg-[#85c263] focus:ring-2 focus:ring-[#85c263] focus:ring-offset-2"
-                    aria-label="Twitter"
-                  >
-                    <Twitter className="w-3 h-3 text-white" />
-                  </a>
-                  <a
-                    href="#"
-                    className="w-7 h-7 bg-gray-400 rounded-full flex items-center justify-center hover:bg-[#85c263] transition-colors focus:outline-none focus:bg-[#85c263] focus:ring-2 focus:ring-[#85c263] focus:ring-offset-2"
-                    aria-label="Instagram"
-                  >
-                    <Instagram className="w-3 h-3 text-white" />
-                  </a>
-                  <a
-                    href="#"
-                    className="w-7 h-7 bg-gray-400 rounded-full flex items-center justify-center hover:bg-[#85c263] transition-colors focus:outline-none focus:bg-[#85c263] focus:ring-2 focus:ring-[#85c263] focus:ring-offset-2"
-                    aria-label="Facebook"
-                  >
-                    <Facebook className="w-3 h-3 text-white" />
-                  </a>
                 </div>
               </div>
             </div>
