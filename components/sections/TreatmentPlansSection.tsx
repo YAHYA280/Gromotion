@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 const TreatmentPlansSection = () => {
@@ -80,19 +81,39 @@ const TreatmentPlansSection = () => {
   return (
     <section className="bg-gray-50 py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-16">
-          <h2 className="text-5xl font-bold text-gray-800 mb-6">
-            Zo ziet het traject eruit
-          </h2>
-          <p className="text-gray-600 text-lg max-w-2xl">
-            Onze trajecten zijn zorgvuldig samengesteld om aan te sluiten bij
-            wat bij jou past.
-          </p>
+        <div className="mb-16 flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-12">
+          <div className="flex-1">
+            <h2 className="text-5xl font-bold text-gray-800 mb-6">
+              Zo ziet het traject eruit
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl">
+              Onze trajecten zijn zorgvuldig samengesteld om aan te sluiten bij
+              wat bij jou past.
+            </p>
+          </div>
+          <div className="flex-shrink-0">
+            <Image
+              src="/aniamatedForm.gif"
+              alt="Animated form demonstration"
+              width={180}
+              height={120}
+              className="rounded-xl shadow-lg"
+              unoptimized
+            />
+          </div>
         </div>
       </div>
 
-      {/* Full-width dark background for cards */}
-      <div className="bg-gray-800 py-16 relative overflow-hidden">
+      {/* Full-width background with SVG for cards */}
+      <div
+        className="py-16 relative overflow-hidden"
+        style={{
+          backgroundImage: "url('/background.svg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
         {/* Background decorative circles */}
         <div className="absolute top-8 right-8 w-24 h-24 bg-green-500 rounded-full opacity-80"></div>
         <div className="absolute bottom-8 left-8 w-16 h-16 bg-green-400 rounded-full opacity-60"></div>
