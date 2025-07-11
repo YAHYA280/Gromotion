@@ -27,7 +27,7 @@ const AboutSection = () => {
           <Image
             className="w-full max-w-sm sm:max-w-md lg:max-w-none lg:w-[500px] xl:w-[600px] h-auto lg:h-[550px] xl:h-[650px] object-cover rounded-xl shadow-lg"
             alt="Professional physiotherapist"
-            src="/AboutSection.png"
+            src="/gromotion2.svg"
             width={600}
             height={650}
             priority
