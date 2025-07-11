@@ -66,11 +66,11 @@ const ContactSection = () => {
           {/* Contact Form */}
           <div>
             <form onSubmit={handleSubmit}>
-              <div className="bg-[#f5f5dc] p-8 rounded-[12px]">
+              <div className="bg-[#F3F8E8] p-8 rounded-[12px]">
                 <div className="space-y-6">
                   {/* Naam Field */}
                   <div className="relative">
-                    <label className="absolute -top-2 left-4 bg-[#f5f5dc] px-2 text-sm font-medium text-gray-700 z-10">
+                    <label className="absolute -top-2 left-4 bg-[#F3F8E8] px-2 text-sm font-medium text-gray-700 z-10">
                       Naam
                     </label>
                     <input
@@ -85,7 +85,7 @@ const ContactSection = () => {
 
                   {/* Email Field */}
                   <div className="relative">
-                    <label className="absolute -top-2 left-4 bg-[#f5f5dc] px-2 text-sm font-medium text-gray-700 z-10">
+                    <label className="absolute -top-2 left-4 bg-[#F3F8E8] px-2 text-sm font-medium text-gray-700 z-10">
                       Email
                     </label>
                     <input
@@ -100,7 +100,7 @@ const ContactSection = () => {
 
                   {/* Telefoonnummer Field */}
                   <div className="relative">
-                    <label className="absolute -top-2 left-4 bg-[#f5f5dc] px-2 text-sm font-medium text-gray-700 z-10">
+                    <label className="absolute -top-2 left-4 bg-[#F3F8E8] px-2 text-sm font-medium text-gray-700 z-10">
                       Telefoonnummer
                     </label>
                     <input
@@ -115,7 +115,7 @@ const ContactSection = () => {
 
                   {/* Adres Field */}
                   <div className="relative">
-                    <label className="absolute -top-2 left-4 bg-[#f5f5dc] px-2 text-sm font-medium text-gray-700 z-10">
+                    <label className="absolute -top-2 left-4 bg-[#F3F8E8] px-2 text-sm font-medium text-gray-700 z-10">
                       Adres
                     </label>
                     <input
@@ -130,7 +130,7 @@ const ContactSection = () => {
 
                   {/* Soorten Diensten Dropdown */}
                   <div className="relative">
-                    <label className="absolute -top-2 left-4 bg-[#f5f5dc] px-2 text-sm font-medium text-gray-700 z-10">
+                    <label className="absolute -top-2 left-4 bg-[#F3F8E8] px-2 text-sm font-medium text-gray-700 z-10">
                       Soorten Diensten
                     </label>
                     <div className="relative">
@@ -172,7 +172,7 @@ const ContactSection = () => {
 
                   {/* Beschrijving Field */}
                   <div className="relative">
-                    <label className="absolute -top-2 left-4 bg-[#f5f5dc] px-2 text-sm font-medium text-gray-700 z-10">
+                    <label className="absolute -top-2 left-4 bg-[#F3F8E8] px-2 text-sm font-medium text-gray-700 z-10">
                       Beschrijving
                     </label>
                     <textarea
@@ -204,7 +204,7 @@ const ContactSection = () => {
           {/* Right Side - Contact Info & Testimonial */}
           <div className="space-y-8">
             {/* Contact Info Card */}
-            <div className="bg-[#f5f5dc] p-8 rounded-[12px]">
+            <div className="bg-[#F3F8E8] p-8 rounded-[12px]">
               <h3 className="text-3xl font-bold text-gray-800 mb-8 text-center">
                 Neem contact met ons op en wij bellen je terug!
               </h3>
@@ -224,7 +224,7 @@ const ContactSection = () => {
             </div>
 
             {/* Testimonial Card */}
-            <div className="bg-[#f5f5dc] p-8 rounded-[12px]">
+            <div className="bg-[#F3F8E8] p-8 rounded-[12px]">
               <div className="text-center">
                 <div className="text-6xl text-[#85c263] mb-6 font-serif leading-none">
                   &quot;

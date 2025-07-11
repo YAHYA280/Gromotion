@@ -50,11 +50,11 @@ const Header = () => {
             className="focus:outline-none"
           >
             <Image
-              className="h-8 lg:h-10 w-auto"
+              className="h-10 lg:h-12 w-auto"
               alt="Gromotion Logo"
               src="/Gromotion.svg"
-              width={160}
-              height={40}
+              width={200}
+              height={56}
               priority
             />
           </button>

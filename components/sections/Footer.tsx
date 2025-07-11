@@ -51,11 +51,11 @@ const Footer = () => {
                     className="focus:outline-none focus:ring-2 focus:ring-[#85c263] rounded-md"
                   >
                     <Image
-                      className="h-8 lg:h-10 w-auto"
+                      className="h-10 lg:h-14 w-auto"
                       alt="Gromotion Logo"
                       src="/Gromotion.svg"
-                      width={160}
-                      height={40}
+                      width={200}
+                      height={56}
                       priority
                     />
                   </button>

@@ -124,7 +124,7 @@ const TreatmentPlansSection = () => {
             {plans.map((plan, index) => (
               <div
                 key={index}
-                className={`${plan.bgColor} p-8 rounded-[32px] border-2 ${plan.borderColor} 
+                className={`${plan.bgColor} p-8 rounded-[32px] border-2 border-gray-200
                   transition-all duration-300 ease-in-out transform
                   hover:scale-105 hover:shadow-2xl hover:border-[#85c263] hover:-translate-y-2
                   cursor-pointer group relative overflow-hidden`}
